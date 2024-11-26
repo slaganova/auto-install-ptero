@@ -7,16 +7,16 @@
 ## Команда установки :
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/TirzzNesia/Pterodactyl-Theme-Autoinstaller/main/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/Nur4ik00p/Auto-Install-Thema-Pterodactyl/main/install.sh)
 ```
 
 ## Возможности инструментов :
 
-- Install Tema Stellar
-- Install Tema Billing
-- Install Tema Enigma
-- Uninstall Tema
-
+- Установить тему Stellar
+- Установить тему Billing
+- Установить тему Enigma
+- Удалить тему
+ 
 
 ## Поддержка системы :
 
@@ -28,7 +28,7 @@ bash <(curl -s https://raw.githubusercontent.com/TirzzNesia/Pterodactyl-Theme-Au
 |                  | 11      | :white_check_mark: |
 |                  | 12      | :white_check_mark: |
 
-_\* Выше представлена ОС, которую я тестировал, остальное можете протестировать самостоятельно._
+_\Выше представлена ОС, которую я тестировал, остальное можете протестировать самостоятельно._
 
 ## Credits 
 - Created by [ Nur4ik ](https://t.me/Nur4ik)
