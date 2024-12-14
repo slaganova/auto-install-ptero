@@ -1100,7 +1100,6 @@ case $installoption in
         broadcast
         ;;    
     3)  repositories_setup
-        required_infos
         firewall
 	harden_linux
         install_wings
