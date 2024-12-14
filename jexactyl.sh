@@ -861,8 +861,8 @@ install_wings() {
     
     systemctl enable --now docker
     output "Установка wings Jexactyl... "
-    mkdir -p /etc/pterodactyl
-    cd /etc/pterodactyl || exit
+    mkdir -p /etc/jexactyl
+    cd /etc/jexactyl || exit
     if [ ${WINGS} = "latest" ]; then
     	curl -L -o /usr/local/bin/wings https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_amd64
     else
@@ -1026,7 +1026,6 @@ delete_mysql_data() {
     mysql -e "$SQL"
     output "Очистка базы данных panel..."
     output "База данных успешно очищена."
-    warn "Ошибка при очистке базы данных panel. Проверьте доступ пользователя jexactyl."
 }
 
 delete_jexactyl_files() {
@@ -1038,9 +1037,9 @@ delete_jexactyl_files() {
         warn "Директория $panel_path не найдена. Файлы панели уже удалены или не были установлены."
     fi
 
-    local nginx_config_path="/etc/nginx/sites-available/panel.conf"
-    local nginx_config_symlink="/etc/nginx/sites-enabled/panel.conf"
-    local nginx_config_rhel="/etc/nginx/conf.d/panel.conf"
+    local nginx_config_path="/etc/nginx/sites-available/jexactyl.conf"
+    local nginx_config_symlink="/etc/nginx/sites-enabled/jexactyl.conf"
+    local nginx_config_rhel="/etc/nginx/conf.d/jexactyl.conf"
 
     if [ -f "$nginx_config_path" ]; then
         rm -f "$nginx_config_path"
