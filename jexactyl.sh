@@ -1020,7 +1020,7 @@ delete_mysql_data() {
     Q1="DROP DATABASE panel;"
     Q2="DROP USER 'jexactyl'@'127.0.0.1';"
     Q3="FLUSH PRIVILEGES;"
-    Q4="EXIT;"
+    Q4="exit;"
     
     SQL="${Q1}${Q2}${Q3}${Q4}"
     mysql -e "$SQL"
