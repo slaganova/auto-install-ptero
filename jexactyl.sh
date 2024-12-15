@@ -1091,6 +1091,7 @@ case $installoption in
 	harden_linux
         setup_jexactyl
         broadcast
+	install_options
         ;;
     2)  repositories_setup
         required_2_infos
@@ -1098,18 +1099,23 @@ case $installoption in
 	harden_linux
         setup_2_jexactyl
         broadcast
+	install_options
         ;;    
     3)  repositories_setup
         firewall
 	harden_linux
         install_wings
         broadcast_wings
+	install_options
         ;;
     4)  upgrade_jexactyl
+        install_options
         ;;
     5)  upgrade_wings
+        install_options
         ;;
     6)  delete_mysql_data
         delete_jexactyl_files
+	install_options
         ;;
 esac
