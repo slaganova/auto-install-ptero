@@ -108,7 +108,7 @@ while [ "$done" == false ]; do
     "$PANEL_CANARY"
     "$WINGS_CANARY"
     "$PANEL_CANARY;$WINGS_CANARY"
-    "UNINSTALL"
+    "$UNINSTALL"
   )
 
   output "What would you like to do?"
