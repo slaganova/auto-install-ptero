@@ -6,7 +6,7 @@ set -e
 #                                                                           #
 # Project 'pterodactyl-installer'                                           #
 #                                                                           #
-# Copyright (C) 2018 - 2022, Vilhelm Prytz, <vilhelm@prytznet.se>           #
+# Copyright (C) 2018 - 2024, Vilhelm Prytz, <vilhelm@prytznet.se>           #
 #                                                                           #
 #   This program is free software: you can redistribute it and/or modify    #
 #   it under the terms of the GNU General Public License as published by    #
@@ -137,7 +137,7 @@ check_os_comp() {
   SUPPORTED=false
   case "$OS" in
   ubuntu)
-    [ "$OS_VER_MAJOR" == "22.04" ] && SUPPORTED=true
+    [ "$OS_VER_MAJOR" == "22" ] && SUPPORTED=true
     [ "$OS_VER_MAJOR" == "24" ] && SUPPORTED=true
     [ "$OS_VER_MAJOR" == "20" ] && SUPPORTED=true
     [ "$OS_VER_MAJOR" == "18" ] && SUPPORTED=true
