@@ -137,7 +137,7 @@ check_os_comp() {
   SUPPORTED=false
   case "$OS" in
   ubuntu)
-    [ "$OS_VER_MAJOR" == "22" ] && SUPPORTED=true
+    [ "$OS_VER_MAJOR" == "22.04" ] && SUPPORTED=true
     [ "$OS_VER_MAJOR" == "24" ] && SUPPORTED=true
     [ "$OS_VER_MAJOR" == "20" ] && SUPPORTED=true
     [ "$OS_VER_MAJOR" == "18" ] && SUPPORTED=true
