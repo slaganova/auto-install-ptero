@@ -133,45 +133,15 @@ detect_distro() {
   OS_VER_MAJOR=$(echo "$OS_VER" | cut -d. -f1)
 }
 
-check_os_comp() {
-  SUPPORTED=false
-  case "$OS" in
-  ubuntu)
-    [ "$OS_VER_MAJOR" == "22" ] && SUPPORTED=true
-    [ "$OS_VER_MAJOR" == "24" ] && SUPPORTED=true
-    [ "$OS_VER_MAJOR" == "20" ] && SUPPORTED=true
-    [ "$OS_VER_MAJOR" == "18" ] && SUPPORTED=true
-    ;;
-  debian)
-    [ "$OS_VER_MAJOR" == "9" ] && SUPPORTED=true
-    [ "$OS_VER_MAJOR" == "11" ] && SUPPORTED=true
-    [ "$OS_VER_MAJOR" == "10" ] && SUPPORTED=true
-    ;;
-  centos)
-    [ "$OS_VER_MAJOR" == "7" ] && SUPPORTED=true
-    [ "$OS_VER_MAJOR" == "8" ] && SUPPORTED=true
-    ;;
-  esac
-
-  # exit if not supported
-  if [ "$SUPPORTED" == true ]; then
-    echo "* $OS $OS_VER is supported."
-  else
-    echo "* $OS $OS_VER is not supported"
-    error "Unsupported OS"
-    exit 1
-  fi
-}
-
 ### Main uninstallation functions ###
 
 rm_panel_files() {
   output "Removing panel files..."
-  rm -rf /var/www/pterodactyl /usr/local/bin/composer
-  [ "$OS" != "centos" ] && unlink /etc/nginx/sites-enabled/pterodactyl.conf
-  [ "$OS" != "centos" ] && rm -f /etc/nginx/sites-available/pterodactyl.conf
+  rm -rf /var/www/jexactyl /usr/local/bin/composer
+  [ "$OS" != "centos" ] && unlink /etc/nginx/sites-enabled/jexactyl.conf
+  [ "$OS" != "centos" ] && rm -f /etc/nginx/sites-available/jexactyl.conf
   [ "$OS" != "centos" ] && ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-  [ "$OS" == "centos" ] && rm -f /etc/nginx/conf.d/pterodactyl.conf
+  [ "$OS" == "centos" ] && rm -f /etc/nginx/conf.d/jexactyl.conf
   systemctl restart nginx
   output "Succesfully removed panel files."
 }
@@ -280,7 +250,7 @@ main() {
   print_brake 70
   output "Pterodactyl uninstallation script"
   output
-  output "Copyright (C) 2018 - 2022, Vilhelm Prytz, <vilhelm@prytznet.se>"
+  output "Copyright (C) 2018 - 2024, Vilhelm Prytz, <vilhelm@prytznet.se>"
   output "https://github.com/vilhelmprytz/pterodactyl-installer"
   output
   output "Sponsoring/Donations: https://github.com/vilhelmprytz/pterodactyl-installer?sponsor=1"
@@ -288,9 +258,8 @@ main() {
   output
   output "Running $OS version $OS_VER."
   print_brake 70
-  check_os_comp
 
-  if [ -d "/var/www/pterodactyl" ]; then
+  if [ -d "/var/www/jexactyl" ]; then
     output "Panel installation has been detected."
     echo -e -n "* Do you want to remove panel? (y/N): "
     read -r RM_PANEL_INPUT
