@@ -21,7 +21,7 @@ display_header() {
   echo -e "${YELLOW}┌──────────────────────────────────────────────────────┐${NC}"
   echo -e "${YELLOW}│                                                      │${NC}"
   echo -e "${YELLOW}│${BLUE}          АВТОМАТИЧЕСКИЙ УСТАНОВЩИК ТЕМ               ${YELLOW}│${NC}"
-  echo -e "${YELLOW}│${BLUE}                ДЛЯ ПТЕРОДАКТИЛЬ ${VERSION}                   ${YELLOW}│${NC}"
+  echo -e "${YELLOW}│${BLUE}                ДЛЯ ПТЕРОДАКТИЛЬ ${VERSION}                 ${YELLOW}│${NC}"
   echo -e "${YELLOW}│                                                      │${NC}"
   echo -e "${YELLOW}└──────────────────────────────────────────────────────┘${NC}"
   echo -e ""
